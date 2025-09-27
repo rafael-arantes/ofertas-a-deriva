@@ -1,12 +1,8 @@
 [
   {
-    "origin": ["http://localhost:5173"],
+    "origin": ["http://localhost:5173", "https://ofertas-a-deriva.vercel.app"],
     "method": ["GET", "POST", "PUT", "DELETE", "HEAD"],
-    "responseHeader": [
-      "Content-Type",
-      "Authorization",
-      "X-Goog-Resumable"
-    ],
+    "responseHeader": ["Content-Type", "Authorization", "X-Goog-Resumable"],
     "maxAgeSeconds": 3600
   }
 ]
