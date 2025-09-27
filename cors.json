@@ -1,6 +1,6 @@
 [
   {
-    "origin": ["http://localhost:5173", "https://ofertas-a-deriva.vercel.app"],
+    "origin": ["http://localhost:5173", "https://ofertas-a-deriva.vercel.app", "https://ofertas.jornalistaaderiva.com.br"],
     "method": ["GET", "POST", "PUT", "DELETE", "HEAD"],
     "responseHeader": ["Content-Type", "Authorization", "X-Goog-Resumable"],
     "maxAgeSeconds": 3600
