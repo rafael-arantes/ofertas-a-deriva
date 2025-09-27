@@ -11,7 +11,7 @@ const ConfirmDeleteModal: React.FC<ConfirmDeleteModalProps> = ({ isOpen, onClose
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4">
       <div className="bg-white p-6 rounded-xl shadow-2xl w-full max-w-sm">
         <h3 className="text-lg font-bold text-slate-800">Confirmar Exclusão</h3>
         <p className="text-slate-600 mt-2 mb-6">Você tem certeza que deseja apagar esta oferta? Esta ação não pode ser desfeita.</p>

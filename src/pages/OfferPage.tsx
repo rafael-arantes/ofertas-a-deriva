@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // CORREÇÃO APLICADA AQUI:
 import { doc, getDoc } from 'firebase/firestore';
-import type { DocumentData } from 'firebase/firestore'; // Importando o tipo separadamente
+// import type { DocumentData } from 'firebase/firestore'; // Importando o tipo separadamente
 import { db } from '../firebase';
 
 // A interface para os dados da oferta permanece a mesma
@@ -17,7 +17,7 @@ interface OfferData {
 const OfferPage = () => {
   // O hook useParams pega os parâmetros da URL, como o :offerId
   const { offerId } = useParams<{ offerId: string }>();
-  
+
   // O estado agora pode ser OfferData ou null
   const [offer, setOffer] = useState<OfferData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ const OfferPage = () => {
   useEffect(() => {
     // Se não houver offerId na URL, encerramos cedo.
     if (!offerId) {
-      setError("ID da oferta não fornecido na URL.");
+      setError('ID da oferta não fornecido na URL.');
       setLoading(false);
       return;
     }
@@ -44,18 +44,18 @@ const OfferPage = () => {
           const data = docSnap.data() as OfferData;
           // 1. Se a oferta estiver arquivada, trata como não encontrada
           if (data.isArchived) {
-            setError("Esta oferta não está mais disponível.");
+            setError('Esta oferta não está mais disponível.');
           } else {
             setOffer(data);
           }
         } else {
           // Se o documento não existe, definimos um erro claro
-          setError("Oferta não encontrada ou expirada.");
+          setError('Oferta não encontrada ou expirada.');
           setOffer(null); // Garantimos que nenhuma oferta antiga seja exibida
         }
       } catch (err) {
-        console.error("Erro ao buscar oferta:", err);
-        setError("Ocorreu um erro ao carregar a oferta.");
+        console.error('Erro ao buscar oferta:', err);
+        setError('Ocorreu um erro ao carregar a oferta.');
         setOffer(null);
       } finally {
         // Independentemente do resultado, a busca terminou
@@ -98,18 +98,18 @@ const OfferPage = () => {
           <img className="w-full h-80 object-cover" src={offer.imageUrl} alt={offer.productName} />
           <div className="p-6 text-center">
             <h1 className="text-2xl font-bold text-slate-800 mb-2">{offer.productName}</h1>
-            <p className="text-4xl font-light text-slate-900 mb-8">R$ {offer.productPrice}</p>
+            <p className="text-4xl font-light text-slate-900 mb-8">{offer.productPrice}</p>
             <a
               href={offer.affiliateLink}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-4 rounded-xl text-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300"
             >
-              Ver Oferta na Loja
+              Aproveitar oferta
             </a>
           </div>
           <footer className="text-center py-4 bg-slate-50">
-            <p className="text-xs text-slate-400">Powered by Seu App de Ofertas</p>
+            <p className="text-xs text-slate-400">Powered by Ofertas à Deriva</p>
           </footer>
         </div>
       </div>
@@ -118,9 +118,9 @@ const OfferPage = () => {
 
   // Fallback: Se não estiver carregando, não tiver erro, mas a oferta for nula
   return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-100">
-        <p className="text-slate-500">Nenhuma oferta para exibir.</p>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-slate-100">
+      <p className="text-slate-500">Nenhuma oferta para exibir.</p>
+    </div>
   );
 };
 

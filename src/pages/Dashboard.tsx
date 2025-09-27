@@ -12,15 +12,15 @@ const Dashboard: React.FC<DashboardProps> = ({ handleLogout }) => {
     <div className="bg-slate-50 min-h-screen">
       <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
         <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-slate-800">Dashboard</h1>
+          <h1 className="text-3xl font-bold text-slate-800">Meu painel</h1>
           <div className="flex items-center gap-4">
             {/* 2. Adicionar link para a página de arquivados */}
             <Link to="/archived" className="text-sm text-slate-600 hover:text-slate-900">
-              Ver Arquivados
+            Ofertas arquivadas
             </Link>
             <button
               onClick={handleLogout}
-              className="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-4 rounded-lg"
+              className="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-4 rounded-lg cursor-pointer"
             >
               Sair
             </button>

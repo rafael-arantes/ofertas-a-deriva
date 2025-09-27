@@ -195,7 +195,7 @@ const OfferList = () => {
       `}</style>
 
       <div className="bg-white p-6 sm:p-8 rounded-xl shadow-sm max-w-2xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6 text-slate-700">Minhas Ofertas</h2>
+        <h2 className="text-2xl font-bold mb-6 text-slate-700">Meus links</h2>
         {displayedOffers.length === 0 ? (
           <p className="text-slate-500 text-center py-4">Você ainda não criou nenhuma oferta.</p>
         ) : (
@@ -209,13 +209,13 @@ const OfferList = () => {
                 />
                 <div className="flex-grow">
                   <p className="font-semibold text-slate-800">{offer.productName}</p>
-                  <p className="text-sm text-slate-500">R$ {offer.productPrice}</p>
+                  <p className="text-sm text-slate-500">{offer.productPrice}</p>
                 </div>
                 <div className="flex gap-2 self-start sm:self-center flex-shrink-0">
                   <button
                     onClick={() => handleArchive(offer.id)}
                     title="Arquivar"
-                    className="p-2 text-slate-500 hover:text-yellow-600 hover:bg-yellow-100 rounded-full"
+                    className="cursor-pointer p-2 text-slate-500 hover:text-yellow-600 hover:bg-yellow-100 rounded-full"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -228,7 +228,7 @@ const OfferList = () => {
                   </button>
                   <button
                     onClick={() => copyLink(offer.id)}
-                    className="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-100 rounded-full"
+                    className="cursor-pointer p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-100 rounded-full"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -241,7 +241,7 @@ const OfferList = () => {
                   </button>
                   <button
                     onClick={() => handleOpenEditModal(offer)}
-                    className="p-2 text-slate-500 hover:text-green-600 hover:bg-green-100 rounded-full"
+                    className="cursor-pointer p-2 text-slate-500 hover:text-green-600 hover:bg-green-100 rounded-full"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -254,7 +254,7 @@ const OfferList = () => {
                   </button>
                   <button
                     onClick={() => handleOpenDeleteModal(offer)}
-                    className="p-2 text-slate-500 hover:text-red-600 hover:bg-red-100 rounded-full"
+                    className="cursor-pointer p-2 text-slate-500 hover:text-red-600 hover:bg-red-100 rounded-full"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path

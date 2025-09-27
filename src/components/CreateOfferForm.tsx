@@ -109,7 +109,7 @@ const CreateOfferForm = () => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm w-full max-w-2xl mx-auto mb-8">
-      <h3 className="text-xl font-bold mb-4 text-gray-700">Criar Nova Oferta</h3>
+      <h3 className="text-xl font-bold mb-4 text-gray-700">Criar nova oferta</h3>
       <form onSubmit={handleSubmit}>
         {error && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">{error}</div>}
         
@@ -128,7 +128,7 @@ const CreateOfferForm = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
-            <label htmlFor="productName" className="block text-sm font-medium text-gray-700">Nome do Produto</label>
+            <label htmlFor="productName" className="block text-sm font-medium text-gray-700">Nome do produto</label>
             <input type="text" id="productName" value={productName} onChange={e => setProductName(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
           </div>
           <div className="mb-4">
@@ -145,17 +145,17 @@ const CreateOfferForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="affiliateLink" className="block text-sm font-medium text-gray-700">Link de Afiliado</label>
+          <label htmlFor="affiliateLink" className="block text-sm font-medium text-gray-700">Link de afiliado</label>
           <input type="url" id="affiliateLink" value={affiliateLink} onChange={e => setAffiliateLink(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="https://..." />
         </div>
 
         <div className="mb-6">
-          <label htmlFor="imageFile" className="block text-sm font-medium text-gray-700">Imagem do Produto</label>
+          <label htmlFor="imageFile" className="block text-sm font-medium text-gray-700">Imagem do produto</label>
           <input type="file" id="imageFile" onChange={handleImageChange} accept="image/png, image/jpeg, image/webp" className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"/>
         </div>
 
-        <button type="submit" disabled={isLoading} className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-gray-400">
-          {isLoading ? 'Criando...' : 'Criar Oferta'}
+        <button type="submit" disabled={isLoading} className="w-full bg-indigo-600 cursor-pointer text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-gray-400">
+          {isLoading ? 'Criando...' : 'Criar oferta'}
         </button>
       </form>
     </div>
